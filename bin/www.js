@@ -9,6 +9,8 @@ import logger from 'debug';
 const debug = logger('mytinerary-back-llampa:server');
 import http from 'http';
 
+import { connect } from 'mongoose'; // Metodo para conectarse a la db 
+
 /**
  * Get port from environment and store in Express.
  */
@@ -20,13 +22,18 @@ app.set('port', port);
  * Create HTTP server.
  */
 
-let server = http.createServer(app);
+let server = http.createServer(app);  // Creo un servidor Normalizado con HTTP
 
 /**
  * Listen on provided port, on all network interfaces.
  */
 
-let ready = ()=>console.log('Server ready on port '+port); //muestro mensaje en consola servidor listo
+let ready = ()=> {
+  console.log('Server ready on port '+port); //muestro mensaje en consola servidor listo
+  connect(process.env.LINK_DB) //el metodo CONNECT devuelce una PROMESA: trabajar con THEN-CATCH o ASYNC-AWAIT
+    .then(()=>console.log('database connected'))
+    .catch(err=>console.log(err))
+}
 server.listen(port,ready); //con metodo listen escucho el puerto para que empiece a funcionar (a levanatarse)
 
 server.on('error', onError);

@@ -1,4 +1,5 @@
 import { model,Schema } from 'mongoose';
+
 let collection = 'users'
 
 let schema = new Schema({

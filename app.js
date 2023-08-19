@@ -4,7 +4,7 @@ import path from 'path'; //para conocer la ubicacion de nuestro Servidor
 // import cookieParser from 'cookie-parser';
 import logger from 'morgan'; //para registrar cada una de las Peticiones
 
-import usersRouter from './routes/users.js'; //Solo vamos a configurar las rutas del enrutador del back principal
+// import usersRouter from './routes/users.js'; //Solo vamos a configurar las rutas del enrutador del back principal
 import indexRouter from './routes/index.js'; //Este enrutador va a llamar a TODOS los otros recursos (cities, itineraries, users)
 
 import 'dotenv/config.js';  //Importo unicamente la configuracion de las variables de entorno
@@ -23,7 +23,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/api', indexRouter);
-app.use('/users', usersRouter);
+// app.use('/users', usersRouter); // usaré el enrutador principal '/api' para todas las demas rutas
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

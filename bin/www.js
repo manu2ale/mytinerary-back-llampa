@@ -9,6 +9,7 @@ import logger from 'debug';
 const debug = logger('mytinerary-back-llampa:server');
 import http from 'http';
 
+
 import { connect } from 'mongoose'; // Metodo para conectarse a la db 
 
 /**
@@ -23,6 +24,11 @@ app.set('port', port);
  */
 
 let server = http.createServer(app);  // Creo un servidor Normalizado con HTTP
+
+//Para que reciba datos complejos desde la url
+// server.requestTimeout(express.urlencoded({extended:true}));
+//para interpretar los mensajes de tipo JSON
+// server.use(express.json());
 
 /**
  * Listen on provided port, on all network interfaces.

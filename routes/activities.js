@@ -1,9 +1,9 @@
 import express from "express";
-import create from "../controllers/cities/create.js"
-import read from "../controllers/cities/read.js";
-import readOne from "../controllers/cities/readOne.js";
-import update from "../controllers/cities/update.js";
-import destroy from "../controllers/cities/destroy.js";
+import create from "../controllers/activities/create.js"
+import read from "../controllers/activities/read.js";
+import readOne from "../controllers/activities/readOne.js";
+import update from "../controllers/activities/update.js";
+import destroy from "../controllers/activities/destroy.js";
 
 let router = express.Router();
 
@@ -21,7 +21,7 @@ router.get('/', read);
 router.get('/:id', readOne);
 
 //Update
-router.put('/:c_id', update)
+router.put('/:a_id', update)
 
 //Destroy
 router.delete('/:id', destroy)

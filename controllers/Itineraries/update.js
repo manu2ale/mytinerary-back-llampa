@@ -1,16 +1,16 @@
-import City from "../../models/City.js";
+import Itinerary from "../../models/Itinerary.js";
 
 export default async (req,res) => {
     try {
-        let updateCity = await City.findByIdAndUpdate(
-            req.params.c_id,
+        let updateItinerary = await Itinerary.findByIdAndUpdate(
+            req.params.i_id,
             req.body,
             {new: true}
-        ).select('city photo')
+        ).select('name photo')
         return res.status(200).json({
             succes:true,
-            message:'city updated',
-            response: updateCity
+            message:'itinerary updated',
+            response: updateItinerary
         })
     } catch (error) {
         return res.status(400).json({

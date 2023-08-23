@@ -1,6 +1,6 @@
 import Activity from '../../models/Activity.js';
 
-export default async (req,res) => {
+export default async (req,res,next) => {
     try {
         let allActivities = await Activity.find()
         return res.status(200).json({
@@ -9,10 +9,6 @@ export default async (req,res) => {
             response: allActivities
         })
     } catch (error) {
-        return res.status(400).json({
-            success: false,
-            message: 'not found',
-            response: null
-        })
+        next(error)
     }
 }

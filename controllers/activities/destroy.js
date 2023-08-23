@@ -1,6 +1,6 @@
 import Activity from '../../models/Activity.js'
 
-export default async (req,res) => {
+export default async (req,res,next) => {
     try {
         let deleteActivity = await Activity.findByIdAndDelete(req.params.id)
         return res.status(200).json({
@@ -9,10 +9,6 @@ export default async (req,res) => {
             response: deleteActivity
         })
     } catch (error) {
-        return res.status(400).json({
-            success: false,
-            message: 'not deleted',
-            response: null
-        })
+        next(error)
     }
 }

@@ -1,6 +1,6 @@
 import Itinerary from "../../models/Itinerary.js";
 
-export default async (req,res) => {
+export default async (req,res,next) => {
     try {
         let updateItinerary = await Itinerary.findByIdAndUpdate(
             req.params.i_id,
@@ -13,10 +13,6 @@ export default async (req,res) => {
             response: updateItinerary
         })
     } catch (error) {
-        return res.status(400).json({
-            success: false,
-            message: 'not updated',
-            response: null
-        })
+        next(error)
     }
 }

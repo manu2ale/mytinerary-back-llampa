@@ -4,6 +4,7 @@ import read from "../controllers/cities/read.js";
 import readOne from "../controllers/cities/readOne.js";
 import update from "../controllers/cities/update.js";
 import destroy from "../controllers/cities/destroy.js";
+import carousel from "../controllers/cities/carousel.js";
 
 let router = express.Router();
 
@@ -18,7 +19,8 @@ router.post('/', create);
 //Read
 router.get('/', read);
 //ReadOne
-router.get('/:id', readOne);
+router.get('/carousel', carousel)
+router.get('/:id', readOne); //Endpoints con params al final para q no detecten palabras como params
 
 //Update
 router.put('/:c_id', update)

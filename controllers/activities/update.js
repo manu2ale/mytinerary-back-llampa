@@ -1,6 +1,6 @@
 import Activity from "../../models/Activity.js";
 
-export default async (req,res) => {
+export default async (req,res,next) => {
     try {
         let updateActivity = await Activity.findByIdAndUpdate(
             req.params.a_id,
@@ -13,10 +13,6 @@ export default async (req,res) => {
             response: updateActivity
         })
     } catch (error) {
-        return res.status(400).json({
-            success: false,
-            message: 'not updated',
-            response: null
-        })
+        next(error)
     }
 }

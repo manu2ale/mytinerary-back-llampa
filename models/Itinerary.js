@@ -9,7 +9,10 @@ let schema = new Schema({
     duration: { type:Number, required:true },
     tags: { type:Array, required:true },
     photo: { type:String, required:true },
-})
+},{
+    timestamps: true
+}    
+)
 
 let Itinerary = model(collection,schema)
 export default Itinerary

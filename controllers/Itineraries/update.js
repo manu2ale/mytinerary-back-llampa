@@ -6,12 +6,23 @@ export default async (req,res,next) => {
             req.params.i_id,
             req.body,
             {new: true}
-        ).select('name photo')
-        return res.status(200).json({
-            succes:true,
-            message:'itinerary updated',
-            response: updateItinerary
-        })
+        ).select('name photo');
+
+        if (updateItinerary) {
+            return res.status(200).json({
+                succes:true,
+                message:'itinerary updated',
+                response: updateItinerary
+
+            })
+        } else {
+            return res.status(404).json({
+                succes: false,
+                message: 'itynerary not found',
+                response: null
+            })
+        }
+
     } catch (error) {
         next(error)
     }

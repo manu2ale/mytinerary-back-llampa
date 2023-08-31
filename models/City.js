@@ -13,7 +13,9 @@ let schema = new Schema({
     featuredLocation: { type:String, default:"edit later"},
     admin_id: { type:Types.ObjectId, required:true, ref:'users' }
     //Para relacionar datos en mongo es necesario REFERENCIAR el dato hacia la COLECCION que necesito relacionarme
-})
+},{
+    timestamps: true
+} )
 
 let City = model(collection,schema)
 export default City

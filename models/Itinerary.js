@@ -9,6 +9,8 @@ let schema = new Schema({
     duration: { type:Number, required:true },
     tags: { type:Array, required:true },
     photo: { type:String, required:true },
+    likes: { type:Number, required:true, default:0 },
+    comments: { type:Array, required:true, default:[]}
 },{
     timestamps: true
 }    

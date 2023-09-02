@@ -43,14 +43,14 @@ const itineraries = [{
     city_id: 'Bolívar',
     price: 200,
     duration: 480,
-    tags: ['#', '#', '#'],
+    tags: ['#park', '#unesco', '#tepuis'],
     photo: 'https://dam.ngenespanol.com/wp-content/uploads/2021/04/GettyImages-139812035.jpg'
 },{
     name: 'Angel Falls',
     city_id: 'Bolívar',
     price: 200,
     duration: 120,
-    tags: ['#', '#', '#'],
+    tags: ['#waterfalls', '#tepuis', '#auyan'],
     photo: 'http://t2.gstatic.com/licensed-image?q=tbn:ANd9GcSybaIKh9qn2LWwkRlWHc694clhB4kB7t-VxxbLMQd14usIcjB3XzKwQnz7huOfgXz1'
 },{
     name: 'Honshu Tour',
@@ -71,7 +71,7 @@ const itineraries = [{
     city_id: 'Bali',
     price: 20,
     duration: 160,
-    tags: ['#nature', '#peace'],
+    tags: ['#nature', '#peace','#adventure'],
     photo: 'https://d18sx48tl6nre5.cloudfront.net/webp_md_28ddbaa5efa991d343efc7c1d602432d.webp'
 },{
     name: 'Veligandu Island Beach',
@@ -127,7 +127,7 @@ const itineraries = [{
     city_id: 'Cairo Citadel',
     price: 20,
     duration: 160,
-    tags: ['#culture', '#peace'],
+    tags: ['#culture', '#peace','#architecture'],
     photo: 'https://i.im.ge/2022/08/31/OERMl1.salahCitadelCairoCity.png'
 }]
 

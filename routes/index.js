@@ -6,6 +6,7 @@ import userRouter from './users.js'
 import citiesRouter from './cities.js'
 import activityRouter from './activities.js'
 import itinerariesRouter from './itineraries.js'
+import authRouter from "./auth.js";
 
 let router = express.Router();
 
@@ -22,7 +23,8 @@ router.use('/users', userRouter);
   // 2 el enrutador que tengo que conectar
 
 router.use('/cities', citiesRouter);
-
 router.use('/activities', activityRouter);
 router.use('/itineraries', itinerariesRouter);
+router.use('/auth',authRouter);
+
 export default router;

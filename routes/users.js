@@ -13,7 +13,7 @@ let router = express.Router();
 // });
 
 //Create
-router.post('/', create);
+router.post('/signup', create);
 
 //Read
 router.get('/', read);

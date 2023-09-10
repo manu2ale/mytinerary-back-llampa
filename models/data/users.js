@@ -13,7 +13,7 @@ const users = [{
     name: "Cinthia",
     lastName: "Di Risio",
     mail: "cin@mh.com",
-    photo: "https://static.wikia.nocookie.net/fma/images/2/26/MouthyMei.JPG/revision/latest?cb=20111223205242&path-prefix=es",
+    photo: "https://i.im.ge/2023/09/02/w07b9a.MouthyMei-JPG.webp",
     password: "Hola1234",
     country: "Argentina"
 },{

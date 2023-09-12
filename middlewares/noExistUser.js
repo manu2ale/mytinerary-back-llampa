@@ -6,7 +6,7 @@ export default async(req,res,next)=> {
         if (!user) {
             return res.status(400).json({
                 success: false,
-                message: 'user not registered',
+                message: 'Invalid credentials',
                 response: null
             })
         } else {

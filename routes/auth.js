@@ -20,7 +20,6 @@ import isValidToken from "../middlewares/isValidToken.js";
 
 let authRouter = Router();
 
-//authRouter.post('/signup',register);
 authRouter.post('/register', validator(registerSchema),
     existUser,
     createHash,

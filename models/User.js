@@ -8,7 +8,7 @@ let schema = new Schema({
     mail: { type:String, required:true, unique:true },
     photo: { type:String, default: 'https://w7.pngwing.com/pngs/867/694/png-transparent-user-profile-default-computer-icons-network-video-recorder-avatar-cartoon-maker-blue-text-logo.png' },
     password: { type:String, required:true },
-    country: { type:String, required:true },
+    country: { type:String, required:true }
 })
 
 // Para crear un modelo de datos utilizo el metodo model

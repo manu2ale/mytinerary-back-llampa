@@ -13,7 +13,7 @@ export default async (req,res,next) => {
         } else {
             return res.status(401).json({
                 success: false,
-                message: 'invalid credentials',
+                message: 'Invalid credentials',
                 response: null
             })
         }

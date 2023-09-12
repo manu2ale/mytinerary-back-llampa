@@ -18,11 +18,19 @@ export default async (req,res,next) => {
                     select: 'name lastName photo'
                 }
             })
-        return res.status(200).json({
-            success: true,
-            message: 'itineraries found',
-            response: allItineraries
-        })
+            if (allItineraries.length > 0) {
+                return res.status(200).json({
+                    success: true,
+                    message: 'itineraries found',
+                    response: allItineraries
+                })
+            } else {
+                return res.status(404).json({
+                    success: false,
+                    message: 'itineraries not found',
+                    response: null
+                })
+            }
     } catch (error) {
         next(error)
     }

@@ -7,6 +7,7 @@ import citiesRouter from './cities.js'
 import activityRouter from './activities.js'
 import itinerariesRouter from './itineraries.js'
 import authRouter from "./auth.js";
+import commentsRouter from "./comments.js";
 
 let router = express.Router();
 
@@ -26,5 +27,6 @@ router.use('/cities', citiesRouter);
 router.use('/activities', activityRouter);
 router.use('/itineraries', itinerariesRouter);
 router.use('/auth',authRouter);
+router.use('/comments',commentsRouter)
 
 export default router;

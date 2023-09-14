@@ -1,9 +1,10 @@
 import express from "express";
-// import create from "../controllers/itineraries/create.js";
-import read from "../controllers/itineraries/read.js";
-import readOne from "../controllers/itineraries/readOne.js";
-import update from "../controllers/itineraries/update.js";
-import destroy from "../controllers/itineraries/destroy.js";
+
+import create from "../controllers/Itineraries/create.js";
+import read from "../controllers/Itineraries/read.js";
+import readOne from "../controllers/Itineraries/readOne.js";
+import update from "../controllers/Itineraries/update.js";
+import destroy from "../controllers/Itineraries/destroy.js";
 
 let router = express.Router();
 
@@ -13,7 +14,7 @@ let router = express.Router();
 // });
 
 //Create
-// router.post('/', create);
+router.post('/', create);
 
 //Read
 router.get('/', read);

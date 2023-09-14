@@ -1,5 +1,5 @@
 import express from "express";
-import create from "../controllers/itineraries/create.js";
+// import create from "../controllers/itineraries/create.js";
 import read from "../controllers/itineraries/read.js";
 import readOne from "../controllers/itineraries/readOne.js";
 import update from "../controllers/itineraries/update.js";
@@ -13,7 +13,7 @@ let router = express.Router();
 // });
 
 //Create
-router.post('/', create);
+// router.post('/', create);
 
 //Read
 router.get('/', read);

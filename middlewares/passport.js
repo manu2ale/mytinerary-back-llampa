@@ -11,7 +11,11 @@ export default passport.use(
         },
         async (jwt_payload, done) => {
             try {
-                let user = await User.findOne({ mail: jwt_payload.mail }, "-password -_id -__v");                if (user) {
+                let user = await User.findOne(
+                    { mail: jwt_payload.mail }, 
+                    "-password -__v"
+                );               
+                 if (user) {
                     return done(null, user)
                 } else {
                     return done(null)

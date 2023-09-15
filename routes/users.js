@@ -1,4 +1,5 @@
 import express from "express";
+
 import read from "../controllers/users/read.js";
 import readOne from "../controllers/users/readOne.js";
 import update from "../controllers/users/update.js";
@@ -6,6 +7,10 @@ import destroy from "../controllers/users/destroy.js";
 
 import passport from '../middlewares/passport.js'
 import updatePassword from "../middlewares/updatePassword.js";
+import validator from '../middlewares/validator.js'
+
+import updateSchema from "../schemas/update.js";
+
 let router = express.Router();
 
 /* GET users listing. */
@@ -22,7 +27,10 @@ router.get('/', read);
 router.get('/:id', readOne);
 
 //Update
-router.put('/',passport.authenticate('jwt',{session:false}),updatePassword ,update)
+router.put('/', validator(updateSchema),
+    passport.authenticate('jwt', { session: false }),
+    updatePassword,
+    update)
 
 //Destroy
 router.delete('/:id', destroy)

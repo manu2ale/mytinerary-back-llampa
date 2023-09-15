@@ -2,7 +2,7 @@ import User from "../models/User.js"
 
 export default async(req,res,next)=> {
     try {
-        let user = await User.findOne({mail:req.body.mail},'-password -_id -__v')
+        let user = await User.findOne({mail:req.body.mail},'-password -__v')
         if (!user) {
             return res.status(400).json({
                 success: false,

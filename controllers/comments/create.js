@@ -5,7 +5,7 @@ export default async(req,res,next)=>{
       req.body.user_id=req.user._id;
         let comment = await Comment.create(req.body)
         return res.status(201).json({
-            succes: true,
+            success: true,
             message: 'comment created',
             response: comment
           })

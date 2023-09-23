@@ -4,6 +4,7 @@ import express from 'express'; //provee métodos y propiedades para levantar ser
 import path from 'path'; //para conocer la ubicacion de nuestro Servidor
 // import cookieParser from 'cookie-parser';
 import logger from 'morgan'; //para registrar cada una de las Peticiones
+import cors from 'cors';
 
 // import usersRouter from './routes/users.js'; //Solo vamos a configurar las rutas del enrutador del back principal
 import indexRouter from './routes/index.js'; //Este enrutador va a llamar a TODOS los otros recursos (cities, itineraries, users)
@@ -12,7 +13,6 @@ import { __dirname } from './utils.js'; //Importo la configuracion de la ubicaci
 
 import errorHandler from './middlewares/errorHandler.js';
 import notFoundHandler from './middlewares/notFoundHandler.js';
-import cors from 'cors';
 
 let app = express(); //Ejecuta el módulo de express: CREA UNA APP DE BACKEND (SERVIDOR)
 
@@ -20,10 +20,10 @@ let app = express(); //Ejecuta el módulo de express: CREA UNA APP DE BACKEND (S
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
+app.use(cors());
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(cors());
 // app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 

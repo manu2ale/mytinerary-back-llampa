@@ -6,7 +6,7 @@ let schema = new Schema({
     name: { type:String, required:true },
     lastName: { type:String },
     mail: { type:String, required:true, unique:true },
-    photo: { type:String, default: 'https://w7.pngwing.com/pngs/867/694/png-transparent-user-profile-default-computer-icons-network-video-recorder-avatar-cartoon-maker-blue-text-logo.png' },
+    photo: { type:String, default: 'https://i.im.ge/2023/09/28/N6umIh.guest.png' },
     password: { type:String, required:true },
     country: { type:String, required:true }
 })
